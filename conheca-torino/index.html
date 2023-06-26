@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAq0lEQVQoke2RvQpBcQBHz/0gg66vy8IVKQaK8d6MyugJDFaDFzB6ArvZI7hJV2SRQSmTfGSxMBhYKP1NHuAOFjnz79SvjiSEwA2yq/WPCCoQblMMocrcHtQKTLY4G0YtumPsE06DzgBDo79E9JCB651qjvmFxYpMlOcLVPw+7B3NPOUssz11C5TPpUSAUhJTBx0jQlwjFsSjUEkxPXI4Y6UZrsELIP3DfUN4A/PAKdEgy9cOAAAAAElFTkSuQmCC"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Cookies -->
+    <script
+      src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+      type="text/javascript"
+      charset="UTF-8"
+      data-domain-script="6aac932d-06d4-4a37-b861-524b80ed3912"
+    ></script>
+    <!-- Fonts google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Alpine -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"
+    ></script>
+    <script src="https://npmcdn.com/parse@2.1.0/dist/parse.min.js"></script>
+    <style>
+      [x-cloak] {
+        visibility: hidden;
+        overflow: hidden;
+        opacity: 0;
+      }
+    </style>
+    <link rel="stylesheet" href="../assets/style/global.css" />
+  </head>
+  <body>
+    <header class="bg-[#EEEEEE] pb-2 md:pb-0 w-full">
+      <section
+        class="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-12 justify-between items-center text-white"
+      >
+        <a href="../" class="order-1 col-span-1 sm:col-span-2">
+          <img
+            loading="lazy"
+            src="../assets/img/Logo-Torino-Iveco.png"
+            alt="IVECO Dealer"
+            class="w-52 -mr-2"
+          />
+        </a>
+        <div
+          class="flex gap-2 justify-around md:justify-end items-center w-full col-span-2 sm:col-span-3 md:col-span-9 order-3 md:order-2"
+        >
+          <p class="hidden lg:block text-black">Fale conosco:</p>
+          <div
+            x-data="{ open: false }"
+            @click.outside="open = false"
+            class="md:mx-5 max-w-[192px] w-full relative"
+          >
+            <button
+              @click="open = ! open"
+              name="menu-telefone"
+              class="btn-primary mx-0 text-sm"
+            >
+              <span class="flex">
+                <img
+                  loading="lazy"
+                  src="../assets/img/tel-cd9ebe3a.svg"
+                  width="15"
+                  alt=""
+                  class="mr-2"
+                />
+                Telefones
+              </span>
+              <img
+                loading="lazy"
+                src="../assets/img/arrow-top-6931a355.svg"
+                alt=""
+                class="rotate-180"
+              />
+            </button>
+            <ul
+              x-show="open"
+              x-cloak
+              x-transition:enter="ease-out duration-300"
+              x-transition:enter-start="opacity-0 -translate-y-4 sm:translate-y-0 sm:scale-95"
+              x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+              x-transition:leave="ease-in duration-200"
+              x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+              x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              name="menu-itens-telefone"
+              class="max-w-sm w-80 bg-white text-black pr-2 pl-5 absolute z-20 md:right-0"
+            >
+              <li class="flex items-center justify-between py-5 text-sm">
+                <span><strong>Buritis:</strong>+55 (31) 3333-3333</span>
+                <div class="w-8 bg-azulIveco rounded-full inline-block p-2">
+                  <img
+                    loading="lazy"
+                    src="../assets/img/tel-cd9ebe3a.svg"
+                    alt=""
+                  />
+                </div>
+              </li>
+              <hr />
+              <li class="flex items-center justify-between py-5 text-sm">
+                <span><strong>Centro:</strong>+55 (31) 99999-9999</span>
+                <div class="w-8 bg-azulIveco rounded-full inline-block p-2">
+                  <img
+                    loading="lazy"
+                    src="../assets/img/tel-cd9ebe3a.svg"
+                    alt=""
+                  />
+                </div>
+              </li>
+              <hr />
+              <li class="flex items-center justify-between py-5 text-sm">
+                <span><strong>Pampulha:</strong>+55 (31) 0800-0000</span>
+                <div class="w-8 bg-azulIveco rounded-full inline-block p-2">
+                  <img
+                    loading="lazy"
+                    src="../assets/img/tel-cd9ebe3a.svg"
+                    alt=""
+                  />
+                </div>
+              </li>
+              <hr />
+              <li class="flex items-center justify-between py-5 text-sm">
+                <span><strong>Ouro Preto:</strong>+55 (31) 0430-0000</span>
+                <div class="w-8 bg-azulIveco rounded-full inline-block p-2">
+                  <img
+                    loading="lazy"
+                    src="../assets/img/tel-cd9ebe3a.svg"
+                    alt=""
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div
+            x-data="{ open: false }"
+            @click.outside="open = false"
+            class="md:mx-5 max-w-[192px] w-full relative"
+          >
+            <button
+              @click="open = ! open"
+              name="menu-whatsapp"
+              class="btn-primary mx-0 bg-verde text-sm"
+            >
+              <span class="flex">
+                <img
+                  loading="lazy"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKySURBVHgB7ZZvaI1RHMfPFVqS9gqtxaO5kiHeCIVL/r4QCUvRllILr5QXXrC1UNKMF/6MJKW18gItsubPLS+kFFFE7N4XWCbN2MqkHZ/T87POfbr3POde5dW+9encc87v3znPeZ57lBrVf1LC11BrnaTZBCmYC1NhCLrhFdyBdCKR+OgTLzYxCWfSnIKNJjA8gDfQKyZTYIkUVQaX4SwF9KhSRdJ90AfXYZaHfQ28hwxUqVKEY4Mk3aGKFD6NMADrinXcCYOw2BqbBIuKiHEI+mGhr0MAWbPN1tgC2b5hOKc8he1J8Sv3Mb4IXXkKOWFONvyElPIQdgl4YrY+znCyBF5jjZ2GNqvfAt3KU6ZIOSs5qx4TsTPPsIdXocsaMw5vrb55XWYQaJ7yELHSNJ9guyvxKngWGRuA6VJ9QNMBNwj4UvnLLGSFK3E1vIiM3YLNJJ1IWw/vSLpFFaensNSVeDz0R8buwy+ohbuwmiLmqOKUhQpX4kGYYA+wumGa49AEz+X3bdn2EUX7EWkVLqrArNatcKnA3EO4Kb/b5f0MpN+gQ2XyFcDYSuh1Jd4DjwrMTZPATdJvhiEpqE+Cn5ECzDtfZvkeMHauxBXimCwwH0jya1AJ6+EKbIjYmEK2qdzdOqxcEqNmx7wJ/FoKqMszvx9+WI8hkMXMVjGJU/L1SsbY7ZXkGfm61cFRSVJr2ZkdaVdxMp82+A5rPWzHScJW2ak2WG7Nb4Xf2n3iR4x3mVWof5QO/9E+w0Ffh3vQYvXLvSrOjbFbDlijr8PfgxDIs+6Q563lWQUx/sanU5LWu2zHRvopMJe0qzAfLsAxFd4mj0CGgGkV3iqz8EWFlz1zHzO3lUowF4UavnjfHHlzb5kStEqcz0edZcXLVPj3WS3+X+EDPIbOuIR5pX2uKKMqUX8AkQGPIFLmjrgAAAAASUVORK5CYII="
+                  width="20"
+                  alt=""
+                  class="mr-2"
+                />
+                Whatsapp
+              </span>
+              <img
+                loading="lazy"
+                src="../assets/img/arrow-top-6931a355.svg"
+                alt=""
+                class="rotate-180"
+              />
+            </button>
+            <ul
+              x-show="open"
+              x-cloak
+              x-transition:enter="ease-out duration-300"
+              x-transition:enter-start="opacity-0 -translate-y-4 sm:translate-y-0 sm:scale-95"
+              x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+              x-transition:leave="ease-in duration-200"
+              x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+              x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              name="menu-itens-whatsapp"
+              class="max-w-sm w-80 bg-white text-black pr-2 pl-5 absolute z-20 right-0"
+            >
+              <li class="flex items-center justify-between py-5 text-sm">
+                <span><strong>Novos:</strong>+55 (31) 3333-3333</span>
+                <div class="w-7 bg-verde rounded-full inline-block p-1">
+                  <img
+                    loading="lazy"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKySURBVHgB7ZZvaI1RHMfPFVqS9gqtxaO5kiHeCIVL/r4QCUvRllILr5QXXrC1UNKMF/6MJKW18gItsubPLS+kFFFE7N4XWCbN2MqkHZ/T87POfbr3POde5dW+9encc87v3znPeZ57lBrVf1LC11BrnaTZBCmYC1NhCLrhFdyBdCKR+OgTLzYxCWfSnIKNJjA8gDfQKyZTYIkUVQaX4SwF9KhSRdJ90AfXYZaHfQ28hwxUqVKEY4Mk3aGKFD6NMADrinXcCYOw2BqbBIuKiHEI+mGhr0MAWbPN1tgC2b5hOKc8he1J8Sv3Mb4IXXkKOWFONvyElPIQdgl4YrY+znCyBF5jjZ2GNqvfAt3KU6ZIOSs5qx4TsTPPsIdXocsaMw5vrb55XWYQaJ7yELHSNJ9guyvxKngWGRuA6VJ9QNMBNwj4UvnLLGSFK3E1vIiM3YLNJJ1IWw/vSLpFFaensNSVeDz0R8buwy+ohbuwmiLmqOKUhQpX4kGYYA+wumGa49AEz+X3bdn2EUX7EWkVLqrArNatcKnA3EO4Kb/b5f0MpN+gQ2XyFcDYSuh1Jd4DjwrMTZPATdJvhiEpqE+Cn5ECzDtfZvkeMHauxBXimCwwH0jya1AJ6+EKbIjYmEK2qdzdOqxcEqNmx7wJ/FoKqMszvx9+WI8hkMXMVjGJU/L1SsbY7ZXkGfm61cFRSVJr2ZkdaVdxMp82+A5rPWzHScJW2ak2WG7Nb4Xf2n3iR4x3mVWof5QO/9E+w0Ffh3vQYvXLvSrOjbFbDlijr8PfgxDIs+6Q563lWQUx/sanU5LWu2zHRvopMJe0qzAfLsAxFd4mj0CGgGkV3iqz8EWFlz1zHzO3lUowF4UavnjfHHlzb5kStEqcz0edZcXLVPj3WS3+X+EDPIbOuIR5pX2uKKMqUX8AkQGPIFLmjrgAAAAASUVORK5CYII="
+                    alt=""
+                  />
+                </div>
+              </li>
+              <hr />
+              <li class="flex items-center justify-between py-5 text-sm">
+                <span><strong>Seminovos:</strong>+55 (31) 99999-9999</span>
+                <div class="w-7 bg-verde rounded-full inline-block p-1">
+                  <img
+                    loading="lazy"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKySURBVHgB7ZZvaI1RHMfPFVqS9gqtxaO5kiHeCIVL/r4QCUvRllILr5QXXrC1UNKMF/6MJKW18gItsubPLS+kFFFE7N4XWCbN2MqkHZ/T87POfbr3POde5dW+9encc87v3znPeZ57lBrVf1LC11BrnaTZBCmYC1NhCLrhFdyBdCKR+OgTLzYxCWfSnIKNJjA8gDfQKyZTYIkUVQaX4SwF9KhSRdJ90AfXYZaHfQ28hwxUqVKEY4Mk3aGKFD6NMADrinXcCYOw2BqbBIuKiHEI+mGhr0MAWbPN1tgC2b5hOKc8he1J8Sv3Mb4IXXkKOWFONvyElPIQdgl4YrY+znCyBF5jjZ2GNqvfAt3KU6ZIOSs5qx4TsTPPsIdXocsaMw5vrb55XWYQaJ7yELHSNJ9guyvxKngWGRuA6VJ9QNMBNwj4UvnLLGSFK3E1vIiM3YLNJJ1IWw/vSLpFFaensNSVeDz0R8buwy+ohbuwmiLmqOKUhQpX4kGYYA+wumGa49AEz+X3bdn2EUX7EWkVLqrArNatcKnA3EO4Kb/b5f0MpN+gQ2XyFcDYSuh1Jd4DjwrMTZPATdJvhiEpqE+Cn5ECzDtfZvkeMHauxBXimCwwH0jya1AJ6+EKbIjYmEK2qdzdOqxcEqNmx7wJ/FoKqMszvx9+WI8hkMXMVjGJU/L1SsbY7ZXkGfm61cFRSVJr2ZkdaVdxMp82+A5rPWzHScJW2ak2WG7Nb4Xf2n3iR4x3mVWof5QO/9E+w0Ffh3vQYvXLvSrOjbFbDlijr8PfgxDIs+6Q563lWQUx/sanU5LWu2zHRvopMJe0qzAfLsAxFd4mj0CGgGkV3iqz8EWFlz1zHzO3lUowF4UavnjfHHlzb5kStEqcz0edZcXLVPj3WS3+X+EDPIbOuIR5pX2uKKMqUX8AkQGPIFLmjrgAAAAASUVORK5CYII="
+                    alt=""
+                  />
+                </div>
+              </li>
+              <hr />
+              <li class="flex items-center justify-between py-5 text-sm">
+                <span><strong>Sac:</strong>+55 (31) 0800-0000</span>
+                <div class="w-7 bg-verde rounded-full inline-block p-1">
+                  <img
+                    loading="lazy"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKySURBVHgB7ZZvaI1RHMfPFVqS9gqtxaO5kiHeCIVL/r4QCUvRllILr5QXXrC1UNKMF/6MJKW18gItsubPLS+kFFFE7N4XWCbN2MqkHZ/T87POfbr3POde5dW+9encc87v3znPeZ57lBrVf1LC11BrnaTZBCmYC1NhCLrhFdyBdCKR+OgTLzYxCWfSnIKNJjA8gDfQKyZTYIkUVQaX4SwF9KhSRdJ90AfXYZaHfQ28hwxUqVKEY4Mk3aGKFD6NMADrinXcCYOw2BqbBIuKiHEI+mGhr0MAWbPN1tgC2b5hOKc8he1J8Sv3Mb4IXXkKOWFONvyElPIQdgl4YrY+znCyBF5jjZ2GNqvfAt3KU6ZIOSs5qx4TsTPPsIdXocsaMw5vrb55XWYQaJ7yELHSNJ9guyvxKngWGRuA6VJ9QNMBNwj4UvnLLGSFK3E1vIiM3YLNJJ1IWw/vSLpFFaensNSVeDz0R8buwy+ohbuwmiLmqOKUhQpX4kGYYA+wumGa49AEz+X3bdn2EUX7EWkVLqrArNatcKnA3EO4Kb/b5f0MpN+gQ2XyFcDYSuh1Jd4DjwrMTZPATdJvhiEpqE+Cn5ECzDtfZvkeMHauxBXimCwwH0jya1AJ6+EKbIjYmEK2qdzdOqxcEqNmx7wJ/FoKqMszvx9+WI8hkMXMVjGJU/L1SsbY7ZXkGfm61cFRSVJr2ZkdaVdxMp82+A5rPWzHScJW2ak2WG7Nb4Xf2n3iR4x3mVWof5QO/9E+w0Ffh3vQYvXLvSrOjbFbDlijr8PfgxDIs+6Q563lWQUx/sanU5LWu2zHRvopMJe0qzAfLsAxFd4mj0CGgGkV3iqz8EWFlz1zHzO3lUowF4UavnjfHHlzb5kStEqcz0edZcXLVPj3WS3+X+EDPIbOuIR5pX2uKKMqUX8AkQGPIFLmjrgAAAAASUVORK5CYII="
+                    alt=""
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          x-data="{ open: false }"
+          @click.outside="open = false"
+          class="order-2 md:order-3 col-span-1 flex justify-end"
+        >
+          <button
+            @click="open = ! open"
+            name="menu-options"
+            x-cloak
+            :class="open ? 'fixed' : 'relative'"
+            class="w-8 h-9 z-30"
+          >
+            <div
+              class="btn-menu"
+              :class="open && 'after:-translate-y-3 after:-rotate-[135deg] before:translate-y-3 before:rotate-[135deg]'"
+            >
+              <div :class="open && 'opacity-0'"></div>
+            </div>
+          </button>
+          <nav
+            x-show="open"
+            x-cloak
+            x-transition:enter="ease-out duration-300"
+            x-transition:enter-start="opacity-0 translate-x-4 sm:translate-y-0 sm:scale-95"
+            x-transition:enter-end="opacity-100 translate-x-0 sm:scale-100"
+            x-transition:leave="ease-in duration-200"
+            x-transition:leave-start="opacity-100 translate-x-0 sm:scale-100"
+            x-transition:leave-end="opacity-0 translate-x-4 sm:translate-y-0 sm:scale-95"
+            name="menu-itens-page"
+            class="fixed h-screen max-w-xl w-full right-0 -top-2 pt-24 z-20 bg-black"
+          >
+            <ul class="max-w-md w-full px-16 pt-20">
+              <hr class="opacity-25" />
+              <li class="py-5 pl-14">
+                <a href="../index.html">Página Inicial</a>
+              </li>
+              <hr class="opacity-25" />
+              <li class="py-5 pl-14">
+                <a href="../conheca-torino/index.html">Conheça a TORINO</a>
+              </li>
+              <hr class="opacity-25" />
+              <li class="py-5 pl-14">
+                <a href="../veiculos-novos/index.html">Veículos Novos</a>
+              </li>
+              <hr class="opacity-25" />
+              <li class="py-5 pl-14">
+                <a href="../seminovos-produtos/index.html">Seminovos</a>
+              </li>
+              <hr class="opacity-25" />
+              <li class="py-5 pl-14">
+                <a href="../servicos/index.html">Serviços</a>
+              </li>
+              <hr class="opacity-25" />
+              <li class="py-5 pl-14">
+                <a href="../contato/">Contato</a>
+              </li>
+              <hr class="opacity-25" />
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </header>
+    <main>
+      <!-- Banner -->
+      <section class="relative">
+        <div class="w-full bg-[#EEEEEE]">
+          <img
+            loading="lazy"
+            src="../assets/img/banner-frota-iveco-f3d1de77.jpg"
+            alt=""
+            class="w-full object-cover object-center"
+          />
+        </div>
+      </section>
+      <!-- Sobre -->
+      <section class="py-9">
+        <div class="container lg:max-w-[1000px] mx-auto">
+          <div>
+            <h2 class="title">
+              Torino, a sua concessionária de soluções IVECO
+            </h2>
+            <p class="body1">
+              A Torino Veículos é uma concessionária Iveco. Atuamos nos Estados
+              de Mato Grosso e Mato Grosso do Sul com mais de 20 anos de
+              História. Ao longo desses anos a Torino Veículos se consolidou com
+              excelentes opções em produtos e serviços da marca Iveco. Temos
+              orgulho de pertencer ao segmento de transportes e de contribuir
+              com o desenvolvimento desses Estados fantásticos.
+            </p>
+            <p class="body1">
+              Como resultado de seu esforço, a TORINO oferece produtos e
+              serviços excelentes, que contam com o máximo em performance e
+              qualidade, assegurando rentabilidade e tranquilidade aos
+              motoristas. A empresa coloca-se, dessa forma, como a melhor
+              solução para seus clientes.
+            </p>
+            <p class="body1">
+              Convidamos você a visitar nossa empresa e conhecer de perto nossos
+              produtos e serviços. Aqui, você terá a oportunidade de
+              experimentar nossa excelência em atendimento, nossa dedicação à
+              inovação e a nossa paixão pelo que fazemos. Nós estamos ansiosos
+              para mostrar a você como podemos contribuir para o seu sucesso.
+              Você será muito bem-vindo!
+            </p>
+            <h3 class="body1 margin-10px-bottom">
+              <strong>Missão</strong>
+            </h3>
+            <p class="body2 no-margin">
+              Crescer de maneira sustentável, orientada para o cliente.
+            </p>
+            <h3 class="body1 margin-10px-bottom">
+              <strong>Visão</strong>
+            </h3>
+            <p class="body2 no-margin">
+              Ser a melhor do mercado em produtos e serviços inovadores e
+              eficientes, criando um ótimo relacionamento com os clientes e a
+              prática da sustentabilidade.
+            </p>
+            <h3 class="body1 margin-10px-bottom">
+              <strong>Valores</strong>
+            </h3>
+            <p class="body2 no-margin">
+              Somos parceiros e entendemos o nosso cliente. Presença e
+              proximidade: Estamos sempre ao lado do cliente.
+            </p>
+          </div>
+          <!--
+          <div class="relative">
+            <div>
+              <img
+                loading="lazy"
+                src="../assets/img/fabrica-78fef7a8.jpg"
+                alt=""
+              />
+              <p class="bg-azulIveco px-11 py-5 text-white">
+                Ultrices pretium amet duis nisi. Faucibus scelerisque aliquet
+                feugiat porttitor.
+              </p>
+            </div>
+            <div
+          
+              class="absolute w-full px-2 top-2/4 left-0 flex justify-between md:mb-32"
+            >
+              <button class="btn-control-slider">
+                <svg
+                  width="16"
+                  height="10"
+                  viewBox="0 0 18 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="stroke-azulIveco -rotate-90 m-auto"
+                >
+                  <path
+                    d="M1 9L9 1L17 9"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button class="btn-control-slider">
+                <svg
+                  width="16"
+                  height="10"
+                  viewBox="0 0 18 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="stroke-azulIveco rotate-90 m-auto"
+                >
+                  <path
+                    d="M1 9L9 1L17 9"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        --></div>
+      </section>
+      <a
+        href="#"
+        name="fale com a gente - contato whatsapp"
+        class="max-w-fit p-3 fixed bottom-6 right-6 bg-verde rounded-full shadow-sm hover:scale-105 hover:shadow-md transition"
+      >
+        <img
+          loading="lazy"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKySURBVHgB7ZZvaI1RHMfPFVqS9gqtxaO5kiHeCIVL/r4QCUvRllILr5QXXrC1UNKMF/6MJKW18gItsubPLS+kFFFE7N4XWCbN2MqkHZ/T87POfbr3POde5dW+9encc87v3znPeZ57lBrVf1LC11BrnaTZBCmYC1NhCLrhFdyBdCKR+OgTLzYxCWfSnIKNJjA8gDfQKyZTYIkUVQaX4SwF9KhSRdJ90AfXYZaHfQ28hwxUqVKEY4Mk3aGKFD6NMADrinXcCYOw2BqbBIuKiHEI+mGhr0MAWbPN1tgC2b5hOKc8he1J8Sv3Mb4IXXkKOWFONvyElPIQdgl4YrY+znCyBF5jjZ2GNqvfAt3KU6ZIOSs5qx4TsTPPsIdXocsaMw5vrb55XWYQaJ7yELHSNJ9guyvxKngWGRuA6VJ9QNMBNwj4UvnLLGSFK3E1vIiM3YLNJJ1IWw/vSLpFFaensNSVeDz0R8buwy+ohbuwmiLmqOKUhQpX4kGYYA+wumGa49AEz+X3bdn2EUX7EWkVLqrArNatcKnA3EO4Kb/b5f0MpN+gQ2XyFcDYSuh1Jd4DjwrMTZPATdJvhiEpqE+Cn5ECzDtfZvkeMHauxBXimCwwH0jya1AJ6+EKbIjYmEK2qdzdOqxcEqNmx7wJ/FoKqMszvx9+WI8hkMXMVjGJU/L1SsbY7ZXkGfm61cFRSVJr2ZkdaVdxMp82+A5rPWzHScJW2ak2WG7Nb4Xf2n3iR4x3mVWof5QO/9E+w0Ffh3vQYvXLvSrOjbFbDlijr8PfgxDIs+6Q563lWQUx/sanU5LWu2zHRvopMJe0qzAfLsAxFd4mj0CGgGkV3iqz8EWFlz1zHzO3lUowF4UavnjfHHlzb5kStEqcz0edZcXLVPj3WS3+X+EDPIbOuIR5pX2uKKMqUX8AkQGPIFLmjrgAAAAASUVORK5CYII="
+          alt="Whatsapp"
+        />
+      </a>
+    </main>
+    <section x-data="formConfig">
+      <div class="bg-black text-white py-20">
+        <div class="container mx-auto">
+          <h2 class="text-6xl font-light leading-relaxed text-center">
+            Como podemos ajudar?
+          </h2>
+          <p class="leading-relaxed text-center max-w-2xl mx-auto my-3">
+            Nós somos a TORINO VEÍCULOS e estamos ao seu lado em todos os
+            momentos da sua jornada. Por isso, fique a vontade para entrar em
+            contato direto com a nossa equipe.
+          </p>
+          <a
+            href="https://web.whatsapp.com/send?phone=556536327700&text=Olá, vim do site da Torino Veículos."
+            class="flex justify-center items-center content-center w-80 p-2 bg-verde mx-auto mt-11 hover:z-0 hover:scale-105 hover:shadow-xl transition"
+            ><img
+              loading="lazy"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKySURBVHgB7ZZvaI1RHMfPFVqS9gqtxaO5kiHeCIVL/r4QCUvRllILr5QXXrC1UNKMF/6MJKW18gItsubPLS+kFFFE7N4XWCbN2MqkHZ/T87POfbr3POde5dW+9encc87v3znPeZ57lBrVf1LC11BrnaTZBCmYC1NhCLrhFdyBdCKR+OgTLzYxCWfSnIKNJjA8gDfQKyZTYIkUVQaX4SwF9KhSRdJ90AfXYZaHfQ28hwxUqVKEY4Mk3aGKFD6NMADrinXcCYOw2BqbBIuKiHEI+mGhr0MAWbPN1tgC2b5hOKc8he1J8Sv3Mb4IXXkKOWFONvyElPIQdgl4YrY+znCyBF5jjZ2GNqvfAt3KU6ZIOSs5qx4TsTPPsIdXocsaMw5vrb55XWYQaJ7yELHSNJ9guyvxKngWGRuA6VJ9QNMBNwj4UvnLLGSFK3E1vIiM3YLNJJ1IWw/vSLpFFaensNSVeDz0R8buwy+ohbuwmiLmqOKUhQpX4kGYYA+wumGa49AEz+X3bdn2EUX7EWkVLqrArNatcKnA3EO4Kb/b5f0MpN+gQ2XyFcDYSuh1Jd4DjwrMTZPATdJvhiEpqE+Cn5ECzDtfZvkeMHauxBXimCwwH0jya1AJ6+EKbIjYmEK2qdzdOqxcEqNmx7wJ/FoKqMszvx9+WI8hkMXMVjGJU/L1SsbY7ZXkGfm61cFRSVJr2ZkdaVdxMp82+A5rPWzHScJW2ak2WG7Nb4Xf2n3iR4x3mVWof5QO/9E+w0Ffh3vQYvXLvSrOjbFbDlijr8PfgxDIs+6Q563lWQUx/sanU5LWu2zHRvopMJe0qzAfLsAxFd4mj0CGgGkV3iqz8EWFlz1zHzO3lUowF4UavnjfHHlzb5kStEqcz0edZcXLVPj3WS3+X+EDPIbOuIR5pX2uKKMqUX8AkQGPIFLmjrgAAAAASUVORK5CYII="
+              alt="Whatsapp"
+              class="mr-3"
+            />
+            Falar com um consultor</a
+          >
+        </div>
+      </div>
+      <!--<form
+        x-init="
+                $watch('cpfCnpj', value => { validate('cpfCnpj') })
+                $watch('fullname', value => { validate('fullname') })
+                $watch('tel', value => { validate('tel') })
+                $watch('email', value => { validate('email') })
+                $watch('estado', value => { validate('estado') })
+                $watch('cidade', value => { validate('cidade') })
+                $watch('produto_interesse', value => { validate('produto_interesse') })
+                $watch('previsao_compra', value => { validate('previsao_compra') })
+                $watch('politicaPrivacidade', value => { validate('politicaPrivacidade') })
+                "
+        @submit.prevent="submit"
+        class="bg-form bg-no-repeat bg-cover bg-center py-3"
+      >
+        <div class="container mx-auto flex flex-col itens-center my-11">
+          <div class="itens-center">
+            <img
+              loading="lazy"
+              class="mx-auto"
+              src="../assets/img/destaque-form-b461cf30.png"
+              alt="Frota IVECO"
+            />
+            <h2 class="text-6xl font-light leading-relaxed text-center">
+              Aproveite nossas ofertas
+            </h2>
+          </div>
+          <div class="container-input">
+            <div class="container-input-item">
+              <label for="cpfCnpj" class="input-label">CPF/CNPJ:</label>
+              <input
+                x-model="cpfCnpj"
+                x-on:input.change="mask.CpfCnpj"
+                type="text"
+                id="cpfCnpj"
+                name="cpfCnpj"
+                class="input-item"
+                maxlength="20"
+              />
+              <span class="text-sm italic text-red-500">
+                <div x-text="validation.cpfCnpj.message"></div>
+              </span>
+            </div>
+            <div class="container-input-item">
+              <label for="nome" class="input-label">Nome Completo:</label>
+              <input
+                x-model="fullname"
+                type="text"
+                id="nome"
+                name="nome"
+                class="input-item"
+              />
+              <span class="text-sm italic text-red-500">
+                <div x-text="validation.fullname.message"></div>
+              </span>
+            </div>
+            <div class="container-input-item">
+              <label for="tel" class="input-label">Telefone:</label>
+              <input
+                x-model="tel"
+                x-on:input.change="mask.tel"
+                type="tel"
+                id="tel"
+                name="tel"
+                class="input-item"
+                maxlength="15"
+              />
+              <span class="text-sm italic text-red-500">
+                <div x-text="validation.tel.message"></div>
+              </span>
+            </div>
+            <div class="container-input-item">
+              <label for="email" class="input-label">Email:</label>
+              <input
+                x-model="email"
+                type="email"
+                id="email"
+                name="email"
+                class="input-item"
+              />
+              <span class="text-sm italic text-red-500">
+                <div x-text="validation.email.message"></div>
+              </span>
+            </div>
+            <div class="container-input-item flex-row justify-between">
+              <div class="flex flex-col w-5/12">
+                <label for="estado" class="input-label">Estado:</label>
+                <select
+                  onchange="getCidades(this)"
+                  x-model="estado"
+                  id="estado"
+                  name="estado"
+                  class="input-item"
+                >
+                  <option selected disabled value="">Selecione</option>
+                  <option value="AC">ACRE</option>
+                  <option value="AL">ALAGOAS</option>
+                  <option value="AP">AMAPA</option>
+                  <option value="AM">AMAZONAS</option>
+                  <option value="BA">BAHIA</option>
+                  <option value="CE">CEARA</option>
+                  <option value="DF">DISTRITO FEDERAL</option>
+                  <option value="ES">ESPIRITO SANTO</option>
+                  <option value="GO">GOIAS</option>
+                  <option value="MA">MARANHAO</option>
+                  <option value="MT">MATO GROSSO</option>
+                  <option value="MS">MATO GROSSO DO SUL</option>
+                  <option value="MG">MINAS GERAIS</option>
+                  <option value="PA">PARA</option>
+                  <option value="PB">PARAIBA</option>
+                  <option value="PR">PARANÁ</option>
+                  <option value="PE">PERNAMBUCO</option>
+                  <option value="PI">PIAUI</option>
+                  <option value="RJ">RIO DE JANEIRO</option>
+                  <option value="RN">RIO GRANDE DO NORTE</option>
+                  <option value="RS">RIO GRANDE DO SUL</option>
+                  <option value="RO">RONDONIA</option>
+                  <option value="RR">RORAIMA</option>
+                  <option value="SC">SANTA CATARINA</option>
+                  <option value="SP">SAO PAULO</option>
+                  <option value="SE">SERGIPE</option>
+                  <option value="TO">TOCANTINS</option>
+                </select>
+                <span class="text-sm italic text-red-500">
+                  <div x-text="validation.estado.message"></div>
+                </span>
+              </div>
+              <div class="flex flex-col w-5/12">
+                <label for="cidade" class="input-label">cidade:</label>
+                <select
+                  x-model="cidade"
+                  id="cidade"
+                  name="cidade"
+                  class="input-item"
+                >
+                  <option selected disabled value="">Selecione</option>
+                </select>
+                <span class="text-sm italic text-red-500">
+                  <div x-text="validation.cidade.message"></div>
+                </span>
+              </div>
+            </div>
+            <div class="container-input-item">
+              <label for="produto_interesse" class="input-label"
+                >Selecione um modelo:</label
+              >
+              <select
+                x-model="produto_interesse"
+                id="produto_interesse"
+                name="produto_interesse"
+                class="input-item"
+              >
+                <option selected value="">Selecione</option>
+                <option value="Tector">Tector</option>
+                <option value="Hi-Way">Iveco Hi-Way</option>
+                <option value="Hi-Road">Iveco Hi-Road</option>
+                <option value="Daily Chassi">Iveco Daily Chassi</option>
+                <option value="Daily Furgao">Iveco Daily Furgao</option>
+                <option value="Daily Minibus">Iveco Daily Minibus</option>
+              </select>
+              <span class="text-sm italic text-red-500">
+                <div x-text="validation.produto_interesse.message"></div>
+              </span>
+            </div>
+            <div class="container-input-item">
+              <label for="previsao_compra" class="input-label"
+                >Previsão de compra:</label
+              >
+              <select
+                x-model="previsao_compra"
+                id="previsao_compra"
+                name="previsao_compra"
+                class="input-item"
+              >
+                <option selected value="">Selecione</option>
+                <option value="0">Imediata</option>
+                <option value="1">Até 3 meses</option>
+                <option value="2">Entre 3 e 6 meses</option>
+                <option value="3">Acima de 6 meses</option>
+              </select>
+              <span class="text-sm italic text-red-500">
+                <div x-text="validation.previsao_compra.message"></div>
+              </span>
+            </div>
+            <hr class="my-6 border-black opacity-25" />
+            <div class="container-input-item">
+              <div class="flex">
+                <input
+                  x-model="permitoContato"
+                  type="checkbox"
+                  name="permitoContato"
+                  id="permitoContato"
+                  class="input-item mr-5"
+                />
+                <label for="permitoContato" class="input-label block"
+                  >Permito que a IVECO ou um concessionário autorizado me
+                  contate por e-mail ou telefone.</label
+                >
+              </div>
+              <div class="flex justify-start">
+                <input
+                  x-model="politicaPrivacidade"
+                  type="checkbox"
+                  name="politicaPrivacidade"
+                  id="politicaPrivacidade"
+                  class="input-item mr-5"
+                />
+                <label for="politicaPrivacidade" class="input-label block"
+                  >Li e concordo com a
+                  <a
+                    class="underline"
+                    href="http://www.cnhtools.com.br/iveco/politica-de-privacidade-revisado.html"
+                    target="_blank"
+                    >Política de Privacidade desta página</a
+                  >.</label
+                >
+              </div>
+              <span class="text-sm italic text-red-500">
+                <div x-text="validation.politicaPrivacidade.message"></div>
+              </span>
+            </div>
+          </div>
+          <div class="w-48 mx-auto">
+            <button type="submit" class="btn-primary my-8">
+              Enviar
+              <img
+                loading="lazy"
+                src="../assets/img/arrow-left-97865be5.svg"
+                width="14px"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+      </form>-->
+    </section>
+    <footer class="bg-black text-white py-1">
+      <section class="container mx-auto">
+        <h2 class="text-6xl font-light leading-relaxed">Nossas lojas</h2>
+        <div
+          x-data="{loja:'Loja Buritis', endereco:{
+                        'Loja Buritis':{endereco:'R-356, 3049 - Burtis, Belo Horizonte - MG, 30320-900', thumb:'loja_buritis.jpg'},
+                        'Loja Centro':{endereco:'R-356, 3049 - Centro, Belo Horizonte - MG, 30320-900', thumb:'loja_centro.jpg'},
+                        'Loja Pampulha':{endereco:'R-356, 3049 - Pampulha, Belo Horizonte - MG, 30320-900', thumb:'loja_pampulha.jpg'},
+                        'Loja Ouro Preto':{endereco:'R-356, 3049 - Centro, Ouro Preto - MG, 30320-900', thumb:'loja_ouro_preto.jpg'},
+                    }}"
+          class="flex flex-col md:flex-row my-20"
+        >
+          <div class="bg-white text-black md:max-w-md w-full p-10">
+            <p>
+              Confira endereço, telefone e horários, selecionando a unidade
+              abaixo:
+            </p>
+            <div class="mt-5">
+              <ol>
+                <li :class="loja === 'Loja Buritis' ? 'list-item-selected':''">
+                  <button class="list-item" x-on:click="loja='Loja Buritis'">
+                    Loja Buritis
+                  </button>
+                </li>
+                <hr />
+                <li :class="loja === 'Loja Centro' ? 'list-item-selected':''">
+                  <button class="list-item" x-on:click="loja='Loja Centro'">
+                    Loja Centro
+                  </button>
+                </li>
+                <hr />
+                <li :class="loja === 'Loja Pampulha' ? 'list-item-selected':''">
+                  <button class="list-item" x-on:click="loja='Loja Pampulha'">
+                    Loja Pampulha
+                  </button>
+                </li>
+                <hr />
+                <li
+                  :class="loja === 'Loja Ouro Preto' ? 'list-item-selected':''"
+                >
+                  <button class="list-item" x-on:click="loja='Loja Ouro Preto'">
+                    Loja Ouro Preto
+                  </button>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="bg-azulIveco text-white w-full p-10">
+            <h3 class="text-4xl" x-text="loja"></h3>
+            <div class="flex flex-col lg:flex-row mt-6">
+              <div>
+                <img
+                  loading="lazy"
+                  :src="'../assets/img/lojas/' + endereco[loja].thumb"
+                  alt="Fachada de uma loja com a logo em cima da iveco"
+                  class="lg:min-w-72/75 w-full"
+                />
+              </div>
+              <div class="md:mx-auto pt-3 lg:pt-0 lg:px-10">
+                <div class="pb-7">
+                  <p>Endereço:</p>
+                  <p x-text="endereco[loja].endereco"></p>
+                  <a href="#" class="btn-primary-sm border-white border mt-2"
+                    >Abrir mapa
+                    <img
+                      loading="lazy"
+                      src="../assets/img/arrow-top-left-39cf7178.svg"
+                      alt=""
+                      width="11"
+                  /></a>
+                </div>
+                <div class="pb-7">
+                  <p>Horário de funcionamento:</p>
+                  <p>
+                    Segunda a sexta de 08:00 às 18:30. Sábado de 09:00 às 14:00
+                  </p>
+                </div>
+                <div>
+                  <p>Telefone:</p>
+                  <p>(31) 4003-4135</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-end">
+          <button
+            x-data="{ scroll: () => { window.scrollTo({top: 0, behavior: 'smooth'})}}"
+            @click="scroll()"
+            class="flex items-center py-8"
+          >
+            Voltar para o topo
+            <img
+              loading="lazy"
+              src="../assets/img/arrow-top-6931a355.svg"
+              alt=""
+              class="pl-4"
+            />
+          </button>
+        </div>
+      </section>
+      <div class="container mx-auto">
+        <hr class="mx-auto border-white opacity-25" />
+      </div>
+      <section class="container flex justify-between mx-auto mt-20">
+        <a href="#">
+          <img
+            loading="lazy"
+            src="data:image/png;base64,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"
+            alt="IVECO"
+          />
+        </a>
+
+        <div class="flex">
+          <a
+            href="https://www.facebook.com/ivecobrasil"
+            target="_blank"
+            class="mx-3"
+          >
+            <img
+              loading="lazy"
+              src="../assets/img/facebook-c5b6ed0e.svg"
+              alt="facebook IVECO"
+            />
+          </a>
+          <a
+            href="https://www.youtube.com/user/iveconobrasil"
+            target="_blank"
+            class="mx-3"
+          >
+            <img
+              loading="lazy"
+              src="../assets/img/youtube-0dee9794.svg"
+              alt="youtube IVECO"
+            />
+          </a>
+          <a
+            href="https://instagram.com/ivecobrasil"
+            target="_blank"
+            class="ml-3"
+          >
+            <img
+              loading="lazy"
+              src="../assets/img/instagram-9de90f07.svg"
+              alt="instagram IVECO"
+            />
+          </a>
+        </div>
+      </section>
+    </footer>
+    <script>
+      function formConfig() {
+        const isCpfCnpj = (val) => {
+          if (val.length == 14) {
+            var cpf = val.trim();
+
+            cpf = cpf.replace(/\./g, "");
+            cpf = cpf.replace("-", "");
+            cpf = cpf.split("");
+
+            var v1 = 0;
+            var v2 = 0;
+            var aux = false;
+
+            for (var i = 1; cpf.length > i; i++) {
+              if (cpf[i - 1] != cpf[i]) {
+                aux = true;
+              }
+            }
+
+            if (aux == false) {
+              return false;
+            }
+
+            for (var i = 0, p = 10; cpf.length - 2 > i; i++, p--) {
+              v1 += cpf[i] * p;
+            }
+
+            v1 = (v1 * 10) % 11;
+
+            if (v1 == 10) {
+              v1 = 0;
+            }
+
+            if (v1 != cpf[9]) {
+              return false;
+            }
+
+            for (var i = 0, p = 11; cpf.length - 1 > i; i++, p--) {
+              v2 += cpf[i] * p;
+            }
+
+            v2 = (v2 * 10) % 11;
+
+            if (v2 == 10) {
+              v2 = 0;
+            }
+
+            if (v2 != cpf[10]) {
+              return false;
+            } else {
+              return true;
+            }
+          }
+          if (val.length == 18) {
+            var cnpj = val.trim();
+
+            cnpj = cnpj.replace(/\./g, "");
+            cnpj = cnpj.replace("-", "");
+            cnpj = cnpj.replace("/", "");
+            cnpj = cnpj.split("");
+
+            var v1 = 0;
+            var v2 = 0;
+            var aux = false;
+
+            for (var i = 1; cnpj.length > i; i++) {
+              if (cnpj[i - 1] != cnpj[i]) {
+                aux = true;
+              }
+            }
+
+            if (aux == false) {
+              return false;
+            }
+
+            for (
+              var i = 0, p1 = 5, p2 = 13;
+              cnpj.length - 2 > i;
+              i++, p1--, p2--
+            ) {
+              if (p1 >= 2) {
+                v1 += cnpj[i] * p1;
+              } else {
+                v1 += cnpj[i] * p2;
+              }
+            }
+
+            v1 = v1 % 11;
+
+            if (v1 < 2) {
+              v1 = 0;
+            } else {
+              v1 = 11 - v1;
+            }
+
+            if (v1 != cnpj[12]) {
+              return false;
+            }
+
+            for (
+              var i = 0, p1 = 6, p2 = 14;
+              cnpj.length - 1 > i;
+              i++, p1--, p2--
+            ) {
+              if (p1 >= 2) {
+                v2 += cnpj[i] * p1;
+              } else {
+                v2 += cnpj[i] * p2;
+              }
+            }
+
+            v2 = v2 % 11;
+
+            if (v2 < 2) {
+              v2 = 0;
+            } else {
+              v2 = 11 - v2;
+            }
+
+            if (v2 != cnpj[13]) {
+              return false;
+            } else {
+              return true;
+            }
+          } else {
+            return false;
+          }
+        };
+        return {
+          fullname: "",
+          cpfCnpj: "",
+          tel: "",
+          email: "",
+          estado: "",
+          cidade: "",
+          produto_interesse: "",
+          previsao_compra: "",
+          permitoContato: "",
+          politicaPrivacidade: "",
+          mask: {
+            CpfCnpj() {
+              let value = this.cpfCnpj;
+              if (value.length <= 11) {
+                value = value.replace(/(\d{3})(\d)/, "$1.$2");
+                value = value.replace(/(\d{3})(\d)/, "$1.$2");
+                value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+              } else {
+                value = value.replace(/^(\d{2})(\d)/, "$1.$2");
+                value = value.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+                value = value.replace(/\.(\d{3})(\d)/, ".$1/$2");
+                value = value.replace(/(\d{4})(\d)/, "$1-$2");
+              }
+              this.cpfCnpj = value;
+            },
+            tel() {
+              let value = this.tel;
+              value = value
+                .replace(/\D/g, "")
+                .replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3")
+                .replace(/(\d{1})/, "$1")
+                .replace(/(\d{1})(\d{4})(\d{4})/, "$1$2-$3");
+              this.tel = value;
+            },
+          },
+          validation: {
+            cpfCnpj: {
+              rule: {
+                required: function (field) {
+                  if (field) {
+                    return { error: false, message: "" };
+                  } else {
+                    return {
+                      error: true,
+                      message: "Este campo é obrigatório.",
+                    };
+                  }
+                },
+                cpfCnpj: function (field) {
+                  if (!isCpfCnpj(field)) {
+                    return {
+                      error: true,
+                      message: "Entre com um valor de CPF ou CNPJ válidos.",
+                    };
+                  }
+                  return { error: false, message: "" };
+                },
+              },
+              error: true,
+              message: "",
+            },
+            fullname: {
+              rule: {
+                required: function (field) {
+                  if (field) {
+                    return { error: false, message: "" };
+                  } else {
+                    return {
+                      error: true,
+                      message: "Este campo é obrigatório.",
+                    };
+                  }
+                },
+                minLength: function (field, value = 2) {
+                  if (field && field.length >= value) {
+                    return { error: false, message: "" };
+                  } else {
+                    return {
+                      error: true,
+                      message: `Este campo tem um valor mínimo ${value} characters de tamanho.`,
+                    };
+                  }
+                },
+              },
+              error: true,
+              message: "",
+            },
+            tel: {
+              rule: {
+                required: function (field) {
+                  if (field) {
+                    return { error: false, message: "" };
+                  } else {
+                    return {
+                      error: true,
+                      message: "Este campo é obrigatório.",
+                    };
+                  }
+                },
+                telefone: function (field) {
+                  var regex = new RegExp(
+                    /(\(\d{2}\)\s)([9]{0,1}\d{4}\-\d{4})/g
+                  );
+
+                  if (regex.test(field))
+                    return {
+                      error: false,
+                      message: "",
+                    };
+                  return {
+                    error: true,
+                    message: "Este campo tem um formato de telefone incorreto.",
+                  };
+                },
+              },
+              error: true,
+              message: "",
+            },
+            email: {
+              rule: {
+                required: function (field) {
+                  if (field) {
+                    return {
+                      error: false,
+                      message: "",
+                    };
+                  } else {
+                    return {
+                      error: true,
+                      message: "Este campo é obrigatório.",
+                    };
+                  }
+                },
+                email: function (field) {
+                  const rgx =
+                    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                  if (rgx.test(field)) {
+                    return {
+                      error: false,
+                      message: "",
+                    };
+                  } else {
+                    return {
+                      error: true,
+                      message:
+                        "Este campo tem um formato de endereço de e-mail incorreto.",
+                    };
+                  }
+                },
+              },
+              error: true,
+              message: "",
+            },
+            estado: {
+              rule: {
+                required: function (field) {
+                  if (field) {
+                    return {
+                      error: false,
+                      message: "",
+                    };
+                  } else {
+                    return {
+                      error: true,
+                      message: "Este campo é obrigatório.",
+                    };
+                  }
+                },
+              },
+              error: true,
+              message: "",
+            },
+            cidade: {
+              rule: {
+                required: function (field) {
+                  if (field) {
+                    return {
+                      error: false,
+                      message: "",
+                    };
+                  } else {
+                    return {
+                      error: true,
+                      message: "Este campo é obrigatório.",
+                    };
+                  }
+                },
+              },
+              error: true,
+              message: "",
+            },
+            produto_interesse: {
+              rule: {
+                required: function (field) {
+                  if (field) {
+                    return {
+                      error: false,
+                      message: "",
+                    };
+                  } else {
+                    return {
+                      error: true,
+                      message: "Este campo é obrigatório.",
+                    };
+                  }
+                },
+              },
+              error: true,
+              message: "",
+            },
+            previsao_compra: {
+              rule: {
+                required: function (field) {
+                  if (field) {
+                    return {
+                      error: false,
+                      message: "",
+                    };
+                  } else {
+                    return {
+                      error: true,
+                      message: "Este campo é obrigatório.",
+                    };
+                  }
+                },
+              },
+              error: true,
+              message: "",
+            },
+            politicaPrivacidade: {
+              rule: {
+                required: function (field) {
+                  if (field) {
+                    return {
+                      error: false,
+                      message: "",
+                    };
+                  } else {
+                    return {
+                      error: true,
+                      message: "Este campo é obrigatório.",
+                    };
+                  }
+                },
+              },
+              error: true,
+              message: "",
+            },
+          },
+          validate(field) {
+            for (const key in this.validation[field].rule) {
+              const validationResult = this.validation[field].rule[key](
+                this[field]
+              );
+              if (validationResult.error) {
+                this.validation[field].error = true;
+                this.validation[field].message = validationResult.message;
+                break;
+              }
+              this.validation[field].error = false;
+              this.validation[field].message = "";
+              continue;
+            }
+          },
+          submit(e) {
+            let isSubmit = true;
+            for (const element of e.target) {
+              const nameElement = element.getAttribute("x-model");
+              if (this.validation[nameElement]) {
+                this.validate(nameElement);
+                if (this.validation[nameElement].error) isSubmit = false;
+              }
+            }
+            if (isSubmit) this.popup = true;
+          },
+        };
+      }
+    </script>
+    <script>
+      Parse.initialize("FRHWR989SxY3Y3TCBVfrxFJoyeFFQYMaeX4t159w");
+      Parse.serverURL = "https://appservices.bhtec.com.br/cnhileads/parse/";
+      function getCidades(uf) {
+        const selectEstado = document.querySelector("#estado");
+        const selectCidade = document.querySelector("#cidade");
+        const selUf = selectEstado.options[selectEstado.selectedIndex].value;
+
+        Parse.Cloud.run("retornaMunicipiosEstado", { UF: selUf }).then(
+          function (cidades) {
+            selectCidade.innerHTML = "";
+            selectCidade.innerHTML = '<option value="">Selecione</option>';
+            dataSrcCidades = Object.create(cidades);
+            cidades.map(function (cidade, index) {
+              const optionCity = document.createElement("option");
+
+              optionCity.value = index;
+              optionCity.textContent = cidade.nome;
+
+              selectCidade.appendChild(optionCity);
+            });
+          }
+        );
+      }
+    </script>
+  </body>
+</html>
